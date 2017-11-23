@@ -13,11 +13,14 @@
 	<table width ="59%" border =1>
 	<tr>
 	<th>Order ID</th>
+	<th>From</th>
+	<th>To</th>
 	<th>Order Date</th>
 	<th>Order Amount</th>
 	<th>Order Status</th>
 	<th>Driver</th>
 	<th>Truck For shipping</th>
+	
 	
 	</tr>
 		<%
@@ -28,7 +31,7 @@
 			try{
 			/*Query for displaying the order*/
 			String view_orders=" SELECT order_id, order_date, order_amount, status, employees.emp_lname, employees.emp_fname"+
-								" ,trucks.truck_make, trucks.truck_model, trucks.truck_color " +
+								" ,trucks.truck_make, trucks.truck_model, trucks.truck_color, ship_from, ship_to " +
 								"FROM orders" +
 								" INNER JOIN employees on employees.emp_id = orders.emp_id " +
 								"INNER JOIN trucks on employees.emp_id = trucks.emp_id " +
@@ -54,16 +57,21 @@
 				String make=rs.getString("truck_make");
 				String model =rs.getString("truck_model");
 				String color = rs.getString("truck_color");
+				String from = rs.getString("ship_from");
+				String to = rs.getString("ship_to");
 				
 			%>
 			
 			<tr>
 			<td><%= order_id %>	</td>
+			<td><%= from%></td>
+			<td><%= to%></td>
 			<td><%= order_date %>	</td>
 			<td><%= amt %>	</td>
 			<td><%= status %>	</td>
 			<td><%= ln%> <%= fn %></td>
 			<td><%= make%>	 <%= model%> <%= color %></td>	
+			
 			</tr>
 		<%		
 			}

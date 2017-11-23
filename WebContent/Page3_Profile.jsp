@@ -26,5 +26,8 @@
 <input type ="button" value="Place An Order" /></a>
 <a href ="Page5_ViewOrders.jsp"> 
 <input type="button" value="View Orders"> </a>
+
+<a href ="Page31_LocPricing.jsp"> 
+<input type="button" value="Location Pricing"> </a>
 </body>
 </html>

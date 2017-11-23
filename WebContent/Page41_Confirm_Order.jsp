@@ -28,6 +28,7 @@
 			PreparedStatement ps = conn.prepareStatement(pricing_query);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()){
+			
 			double ship_rate=rs.getDouble("price_cost");
 			String make = rs.getString("truck_make");
 			String model = rs.getString("truck_model");
@@ -51,6 +52,7 @@
 				<b><%= from %> Sales Tax:</b> <%= Tax %>% <hr>
 					<b>Total: </b> $<%= total %></td>
 			
+			
 		</tr>
 	</table>
 	<a href="Page4_PlaceOrder.jsp">Go Back</a>
@@ -69,6 +71,8 @@
 	order_session.setAttribute("rent_rate",rental);
 	order_session.setAttribute("tax",Tax);
 	order_session.setAttribute("total",total);
+	order_session.setAttribute("ship_type",type);
+
 	}
 	}catch(Exception e){
 			e.printStackTrace();
