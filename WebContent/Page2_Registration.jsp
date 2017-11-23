@@ -120,6 +120,7 @@
 		</tr>
 		
 		</table> <br>
+		
 		<input type="submit" value="register" align="ceter">
 	</form>
 </body>

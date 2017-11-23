@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Login
@@ -46,9 +47,12 @@ public class Login extends HttpServlet {
 		try {
 			String dbEmail=null;
 			String dbPassword=null;
-			PrintWriter out=response.getWriter();
+			String name=null;
+			int id=0;
+			PrintWriter out=response.getWriter();	
 			String em=request.getParameter("email");
 			String pw= request.getParameter("password");
+		
 			String login_query="SELECT * FROM CUSTOMERS WHERE CUST_EMAIL=? AND PASSWORDS=?";
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/soag14","root","root");
@@ -57,18 +61,28 @@ public class Login extends HttpServlet {
 			ps.setString(2, pw);
 			ResultSet rs= ps.executeQuery();	//executeQuery for displaying data and executeUpdate for inserting
 			
-			/*The 2 variables below help cycling through db to get a match*/
+			/*Loop for searching for a row that has same email and password entered by user, searches for id and name as well*/
 			
 			while(rs.next()) {
 				dbEmail=rs.getString("cust_email");
 				dbPassword=rs.getString("passwords");
+			    id = rs.getInt("cust_id");
+			    name = rs.getString("cust_fname");
 			}
+			
+			/*If creds are correct- accept id and first name as sessions*/
 			
 			if(em.equals(dbEmail)&&pw.equals(dbPassword)) {
 				out.print("Welcome: "+em);
+				HttpSession session = request.getSession();
+				session.setAttribute("fname", name);
+				session.setAttribute("cust_id", id);
+				response.sendRedirect("Page3_Profile.jsp");
+				
 			}
 			else {
-		
+				
+				//redirects to login page if creds are incorrect
 				RequestDispatcher rd=request.getRequestDispatcher("Page1_Login.jsp");
 				rd.include(request, response);
 				//Learn how to add additional info

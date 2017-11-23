@@ -19,14 +19,18 @@
 			
 			<tr>
 				<td> Password: </td>
-				<td><input type ="password" name ="password" required="required"></td>
-			</tr>
+				<td><input type ="password" name ="password" required="required"></td></tr>
+			
 		</table>
 		
 	
 	<!-- Apply css function here -->	
 		<div align="center">
 		<input type="submit" value ="login">
+		
+		<a href="Page2_Registration.jsp">
+					<input type="button" value ="Register Page"/>
+				</a>
 		</div>
 	</form>
 	

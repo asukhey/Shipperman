@@ -107,8 +107,7 @@ public class Register extends HttpServlet {
 			ps.executeUpdate();
 			
 			/*Print the output*/
-			PrintWriter writer=response.getWriter();
-			writer.println("Success!");
+			response.sendRedirect("Page1_Login.jsp");
 			
 			
 			
