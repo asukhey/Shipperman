@@ -1,13 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Profile</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
+	<div class="navbar">
+	  <a href="index.html">Home</a>
+	  <a href="about.html">About Us</a>
+	  <a href="contact.html">Contact Us</a>
+	</div>
 
+	<div class="main">
+	<h1>Shipperman Trucking Company</h1>
 
 
 <%
@@ -20,14 +29,10 @@
 	session.getAttribute("cust_id");
 %>
 
-<h5 align="right" >Welcome: <%= session.getAttribute("fname") %></h5> <br><hr>
+<h5 align="right" >Welcome: <%= session.getAttribute("fname") %></h5> <br><br>
 <!-- Operations -->
-<a href ="Page4_PlaceOrder.jsp">
-<input type ="button" value="Place An Order" /></a>
-<a href ="Page5_ViewOrders.jsp"> 
-<input type="button" value="View Orders"> </a>
-
-<a href ="Page31_LocPricing.jsp"> 
-<input type="button" value="Location Pricing"> </a>
+<a class = "button" href ="Page4_PlaceOrder.jsp">Place An Order</a>
+<a class = "button" href ="Page5_ViewOrders.jsp">View Orders</a>
+</div>
 </body>
 </html>

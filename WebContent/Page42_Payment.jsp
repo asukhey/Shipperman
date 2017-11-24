@@ -1,59 +1,62 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
 
-<% HttpSession order_session = request.getSession();
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="main">
+        <h1>Shipperman Trucking Company</h1>
+
+        <div class="container">
+    
+        <% HttpSession order_session = request.getSession();
 	String total = order_session.getAttribute("total").toString();%>
 
-	<h1 align= "center"> Payment System</h1>
-<form name = "Payment" class ="form" action="ValidateFormData" method = "POST">
-		<table border = 0>
-			<tr>
-				<td>Credit Card Number:</td>
-				<td><input type ="text" name ="ccn" size ="16"/></td>	
-				<td><font color="red" >${message1}</font></td>
-			</tr>
-			
-			<tr>
-				<td>Credit Card Type:</td>
-				<td><select name = "cardtype">
-						<option>Master Card</option>
-						<option>Visa</option>
-						<option>American Express</option>
-						<option>Discover</option>
-						<option>Capital One</option>
-					</select></td>
+        <form name = "Payment"  action="ValidateFormData" method = "POST">
+
+            <label for ="ccn">Credit Card Number</label>
+            <input type ="text" id = "ccn" name ="ccn" size ="16" class="form-control" required/><br>
+            <p><font color="red" >${message1}</font></p>
+	
+            <strong>Credit Card Type</strong><br><select name="cardType" class="form-control">
+		<option>Master Card</option>
+		<option>Visa</option>
+		<option>American Express</option>
+		<option>Discover</option>
+		<option>Capital One</option>
+		</select><br>
 				
-			</tr>
-			
-			<tr>
-				<td>Authentication Pin:</td>
-				<td><input type ="text" name ="auth" size ="4"/></td>
-				<td><p><font color="red" > ${message2}</font> </p>	</td>
-			</tr>
-			
-			<tr>
-				<td>Amount :</td>
-				<td><b>$<%= total  %></b></td>
-			</tr>
-			
-			<tr>
-				<td>Card Expiry Date (MM/YYYY):</td>
-				<td><input type="text" name="month" size="2"> / <input type="text" name="year" size="4"></td>
-				<td ><p><font color="red" >${message4} </font> </p></td>
-			</tr>
-		</table>
-		<div class = "sub">
-		<input type="submit" value ="submit" name ="submit" >
-		</div>
-		<br>
+		<label for ="pin">PIN</label>
+		<input type ="password" id = "pin" name ="auth" class="form-control" required/><br>
+                <p><font color="red" > ${message2}</font> </p><br>
+		
+                <label for ="amount">Amount</label>
+                <input id = "amount" name = "amount" value="$<%= total  %>"  class="form-control"/><br>
+		
+                <label for ="month">Card Expiry Date (MM/YYYY)</label>
+		<input type="text" id = "month" name="month" size="2"> / <input type="text" name="year" size="4"><br>
+                <p><font color="red" >${message4} </font> </p><br>
+		
+                <input type="Submit" name="Submit" id="Submit" />
+                
+                <a class = "button" href ="Page4_PlaceOrder.jsp">Cancel</a>
+		
 		
 	</form>
+        </div>
+    </div>
 </body>
 </html>

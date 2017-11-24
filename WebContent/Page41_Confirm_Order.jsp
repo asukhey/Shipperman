@@ -3,14 +3,25 @@
  
  <%@ page import="dbc.*" %>
  <%@ page import="java.sql.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Confirm</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
-	<table width=59% border ="1">
+	<div class="navbar">
+	  <a href="index.html">Home</a>
+	  <a href="about.html">About Us</a>
+	  <a href="contact.html">Contact Us</a>
+	</div>
+
+	<div class="main">
+	<h1>Shipperman Trucking Company</h1>
+    
+        <table width=59% border ="1">
 		<tr>
 			<th>Journey</th>
 			<th>Vehicle</th>
@@ -28,7 +39,6 @@
 			PreparedStatement ps = conn.prepareStatement(pricing_query);
 			ResultSet rs=ps.executeQuery();
 			while(rs.next()){
-			
 			double ship_rate=rs.getDouble("price_cost");
 			String make = rs.getString("truck_make");
 			String model = rs.getString("truck_model");
@@ -52,11 +62,11 @@
 				<b><%= from %> Sales Tax:</b> <%= Tax %>% <hr>
 					<b>Total: </b> $<%= total %></td>
 			
-			
 		</tr>
 	</table>
-	<a href="Page4_PlaceOrder.jsp">Go Back</a>
-	<a href="Page42_Payment.jsp">Proceed</a>
+	<a class ="button" href="Page42_Payment.jsp">Proceed to Payment</a>
+        <a class ="button" href="Page4_PlaceOrder.jsp">Go Back</a>
+	
 	
 	
 	<%
@@ -71,8 +81,6 @@
 	order_session.setAttribute("rent_rate",rental);
 	order_session.setAttribute("tax",Tax);
 	order_session.setAttribute("total",total);
-	order_session.setAttribute("ship_type",type);
-
 	}
 	}catch(Exception e){
 			e.printStackTrace();
@@ -80,6 +88,6 @@
 		
 	%>
 		
-
+        </div>
 </body>
 </html>

@@ -1,26 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="dbc.*" %>
-     <%@ page import="java.sql.*" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    <%@ page import="java.sql.*" %>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>View Order</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
 
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="main">
+        <h1>Shipperman Trucking Company</h1>    
+    
+        <br>
 	<table width ="59%" border =1>
 	<tr>
 	<th>Order ID</th>
-	<th>From</th>
-	<th>To</th>
 	<th>Order Date</th>
 	<th>Order Amount</th>
 	<th>Order Status</th>
 	<th>Driver</th>
 	<th>Truck For shipping</th>
-	
 	
 	</tr>
 		<%
@@ -31,7 +40,7 @@
 			try{
 			/*Query for displaying the order*/
 			String view_orders=" SELECT order_id, order_date, order_amount, status, employees.emp_lname, employees.emp_fname"+
-								" ,trucks.truck_make, trucks.truck_model, trucks.truck_color, ship_from, ship_to " +
+								" ,trucks.truck_make, trucks.truck_model, trucks.truck_color " +
 								"FROM orders" +
 								" INNER JOIN employees on employees.emp_id = orders.emp_id " +
 								"INNER JOIN trucks on employees.emp_id = trucks.emp_id " +
@@ -57,21 +66,16 @@
 				String make=rs.getString("truck_make");
 				String model =rs.getString("truck_model");
 				String color = rs.getString("truck_color");
-				String from = rs.getString("ship_from");
-				String to = rs.getString("ship_to");
 				
 			%>
 			
 			<tr>
 			<td><%= order_id %>	</td>
-			<td><%= from%></td>
-			<td><%= to%></td>
 			<td><%= order_date %>	</td>
 			<td><%= amt %>	</td>
 			<td><%= status %>	</td>
 			<td><%= ln%> <%= fn %></td>
 			<td><%= make%>	 <%= model%> <%= color %></td>	
-			
 			</tr>
 		<%		
 			}
@@ -87,6 +91,7 @@
 
 
 	</table>
-
+    <a class = "button" href ="Page3_Profile.jsp">Go To Profile</a>
+    </div>
 </body>
 </html>

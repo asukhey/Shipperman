@@ -1,127 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
-<h1 align="center">REGISTER</h1>
-	<form action="Register" method="post" align="center">
+
+	<div class="navbar">
+	  <a href="index.html">Home</a>
+	  <a href="about.html">About Us</a>
+	  <a href="contact.html">Contact Us</a>
+	</div>
+
+	<div class="main">
+	<h1>Shipperman Trucking Company</h1>
+        
+        <div class="container">
+        <form name = "Register" action="Register" method="post" >
 	
-		<table id ="reg_table" border="0" align="center">
+                <h3>Personal</h3><br>
+		First Name <input type="text" name ="fn" class = "form-control" required/><br>
+		Last Name <input type="text" name ="ln" class = "form-control" required/><br>
 		
-		<tr>
-			<td>First Name:</td>
-			<td><input type="text" name ="fn"></td>
-		</tr>
+		<h3>Billing Address</h3><br> 
+		Street Address <input type="text" name ="stadd" class = "form-control" required/><br>
+		City <input type="text" name ="city" class = "form-control" required/><br>
+		State <input type="text" name ="state" class = "form-control" required/><br>
+		Zip <input type="text" name ="zip" class = "form-control" required/><br>
+		Country <input type="text" name ="country" class = "form-control" required/><br>
 		
-		<tr>
-			<td>Last Name:</td>
-			<td><input type="text" name ="ln"></td>
-		</tr>
+		<h3>Contact Info</h3><br> 
+		Residence <input type="text" name="res" class = "form-control" /><br>
+		Cell <input type="text" name="cell" class = "form-control" required/><br>
+		Fax <input type="text" name="fax" class = "form-control" ><br>
 		
-		<tr>
-			<td><h3>Billing Address:</h3></td> 
+		<h3>Profile Authentication</h3><br> 
+		Email <input type="text" name="email" class = "form-control" required/><br>
+		Password <input type="password" name="password" class = "form-control" required/><br>
 		
-		</tr>
+		<h3>Company</h3><br> 
+		Company name <input type="text" name="company" class = "form-control" required/><br>
+		Type <input type="radio" name="type" value="employee">Employee<br>
+                     <input type="radio" name="type" value="owner">Owner<br>
 		
-		<tr>
-			<td>Street Address:</td>
-			<td><input type="text" name ="stadd"></td>
-		</tr>
+		<h3>Alternate Contact</h3><br> 
+		Name <input type="text" name="acname" class = "form-control" required/><br>
+		Phone Number <input type="text" name="acph" class = "form-control" required/><br>
+		<br>
 		
-		<tr>
-			<td>City:</td>
-			<td><input type="text" name ="city"></td>
-		</tr>
-		
-		<tr>
-			<td>State:</td>
-			<td><input type="text" name ="state"></td>
-		</tr>
-		
-		<tr>
-			<td>Zip:</td>
-			<td><input type="text" name ="zip"></td>
-		</tr>
-		
-		<tr>
-			<td>Country:</td>
-			<td><input type="text" name ="country"></td>
-		</tr>
-		
-		<tr>
-			<td><h3>Contact Info:</h3></td> 
-		
-		</tr>
-		
-		
-		<tr>
-			<td>Residence:</td>
-			<td><input type="text" name="res"></td>
-		</tr>
-		
-		<tr>
-			<td>Cell:</td>
-			<td><input type="text" name="cell"></td>
-		</tr>
-		
-		<tr>
-			<td>Fax:</td>
-			<td><input type="text" name="fax"></td>
-		</tr>
-		
-		<tr>
-			<td><h3>Profile Authentication:</h3></td> 
-		
-		</tr>
-		
-		<tr>
-			<td>Email:</td>
-			<td><input type="text" name="email"></td>
-		</tr>
-		
-		<tr>
-			<td>Password:</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		
-		<tr>
-			<td><h3>Company</h3></td> 
-		
-		</tr>
-		
-		<tr>
-			<td>Company name:</td>
-			<td><input type="text" name="company"></td>
-		</tr>
-		
-		<tr>
-			<td>Type:</td>
-			<td><input type="radio" name="type" value="employee">Employee</td>
-			<td><input type="radio" name="type" value="owner">Owner</td>
-		</tr>
-		
-		<tr>
-			<td><h3>Alternate Contact:</h3></td> 
-		
-		</tr>
-		
-		<tr>
-			<td>Name:</td>
-			<td><input type="text" name="acname"></td>
-		</tr>
-		
-		<tr>
-			<td>Phone Number:</td>
-			<td><input type="text" name="acph"></td>
-		</tr>
-		
-		</table> <br>
-		
-		<input type="submit" value="register" align="ceter">
+		<input type="Submit" name="Submit" id="Submit" value = "Register">
 	</form>
+        </div>
+        </div>
 </body>
 </html>

@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Success</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
 <%
@@ -21,9 +23,19 @@
 	
 %>
 
-<h3>Order Placed Successfully:</h3>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
 
-<table border ="1" width=100% >
+    <div class="main">
+        <h1>Shipperman Trucking Company</h1>
+
+        <div class="container">
+        <p class = "message" >Order Placed Successfully</p>
+
+        <table border ="1" width=100% >
 	<tr>
 		<td> Location: </td>
 		<td><%= from %> To <%= to %></td>
@@ -46,10 +58,10 @@
 	<tr>
 		<td>Card Number: </td>
 		<td>xxxx xxxx xxxx <%= ccn %> </td>
-</table>
+        </table>
 
-	<a href = "Page3_Profile.jsp">
-		<input type="button" value ="Go Back To profile"/>
-	</a>
+	<a class="button" href = "Page3_Profile.jsp">Go Back To profile</a>
+        </div>
+    </div>
 </body>
 </html>
