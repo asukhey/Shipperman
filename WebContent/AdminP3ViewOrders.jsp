@@ -6,7 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
 <title>View Employee</title>
+=======
+<title>View Order</title>
+>>>>>>> 271a2c9a2c3a8eb655a7878e54b775854bfa5eda
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
@@ -96,6 +100,7 @@
 
 
 	</table>
+<<<<<<< HEAD
 	<br><hr><br>
 	<form action="Modify.java" method="post">
 	  Order ID:	<input type="text" name="order_id"/>
@@ -109,5 +114,25 @@
 	</form>
     <a href="AdminP2_Profile.jsp"><input type="button" value="Back To Profiles Page" ></input></a>
     </div>
+=======
+	
+	<div class="container">
+	<form action="Modify.java" method="post">
+	  	<label for ="orderId">Order ID</label>
+		<input type="text" name="order_id" class = "form-control" /><br>
+		
+	  	<strong>Status</strong><br><select name="status" class="form-control">
+	  	<option> Processing</option>
+	  	<option> Shipping</option>
+	  	<option> Shipped</option>
+	  	</select><br>
+	  	<input type="Submit" name="Submit" id="Submit" />
+	  	<br>
+	
+		<a class = "button" href="AdminP2_Profile.jsp">Go To Profile</a>
+	</form>
+	</div>
+</div>
+>>>>>>> 271a2c9a2c3a8eb655a7878e54b775854bfa5eda
 </body>
 </html>

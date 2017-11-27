@@ -1,0 +1,15 @@
+function Verify() {
+  var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var emailObj = document.getElementById("cus_email");
+  if (emailObj.value == null || emailObj.value == "") {
+   alert("Enter email Id");
+   emailObj.focus();
+   return false;
+  } else if (!emailpattern.test(emailObj.value)) {
+   alert("please enter valid e-mail address")
+   emailObj.focus();
+   return false;
+  } else {
+   return true;
+  }
+ }
