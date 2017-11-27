@@ -81,6 +81,7 @@
 	order_session.setAttribute("rent_rate",rental);
 	order_session.setAttribute("tax",Tax);
 	order_session.setAttribute("total",total);
+	order_session.setAttribute("ship_type",type);
 	}
 	}catch(Exception e){
 			e.printStackTrace();

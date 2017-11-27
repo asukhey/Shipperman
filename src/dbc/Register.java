@@ -106,7 +106,7 @@ public class Register extends HttpServlet {
 			//Execute the Statement
 			ps.executeUpdate();
 			
-			/*Print the output*/
+			//Redirect
 			response.sendRedirect("Page1_Login.jsp");
 			
 			

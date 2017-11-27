@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 /**
  * Servlet implementation class ValidateFormData
  */
@@ -33,6 +36,7 @@ public class ValidateFormData extends HttpServlet {
 		int mm=Integer.parseInt(request.getParameter("month"));
 		int yy= Integer.parseInt(request.getParameter("year"));
 		HttpSession session = request.getSession();
+		String ship_type= session.getAttribute("ship_type").toString();
 		ModTen mt = new ModTen();
 		Validation v = new Validation();
 		
@@ -56,6 +60,71 @@ public class ValidateFormData extends HttpServlet {
 			session.setAttribute("month", mm);
 			session.setAttribute("yy", yy);
 			
+			
+				/*Get current date and time*/
+				//Variables used for records
+				Timestamp date = new Timestamp(new java.util.Date().getTime());
+				String cust_id=session.getAttribute("cust_id").toString();
+				int cid = Integer.parseInt(cust_id);
+				String amt=session.getAttribute("total").toString();
+				float totamt=Float.parseFloat(amt);
+				String status="Processing";
+				String ship_from = session.getAttribute("loc_from").toString();
+				String ship_to = session.getAttribute("loc_to").toString();
+				
+				/*Retrieving Employee Details*/
+					
+				/*Create a record in Order table*/
+				
+				String ins_rec = "Insert into orders (order_date,cust_id,emp_id,truck_id,order_amount,status,ship_from,ship_to)"
+						+ "values (?,?,?,?,?,?,?,?) ";
+			
+				
+				try {
+					
+					Class.forName("com.mysql.jdbc.Driver");
+					Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/soag14","root","root");
+					
+					String emp_details = "Select emp_id, truck_id from trucks where shipping_type= '"+ship_type+"'";
+					PreparedStatement ps1 = conn.prepareStatement(emp_details);
+					ResultSet rs = ps1.executeQuery();
+					while(rs.next()) {
+						int emp_id = rs.getInt("emp_id");
+						int truck_id = rs.getInt("truck_id");
+						session.setAttribute("e_id", emp_id);
+						session.setAttribute("t_id", truck_id);
+					}
+					
+					int emp_id = Integer.parseInt(session.getAttribute("e_id").toString());
+					int truck_id = Integer.parseInt(session.getAttribute("t_id").toString());
+					PreparedStatement ps= conn.prepareStatement(ins_rec);
+					ps.setTimestamp(1,date);
+					ps.setInt(2,cid);
+					ps.setInt(3, emp_id);
+					ps.setInt(4, truck_id);
+					ps.setFloat(5, totamt);
+					ps.setString(6, status);
+					ps.setString(7, ship_from);
+					ps.setString(8, ship_to);
+					ps.executeUpdate();
+					ps.close();
+					
+					/*	Update emp_id and truck id */
+					
+					
+					
+					
+					/*
+					 * Add records in invoice table
+					 * */
+					
+					/*Add a print option*/
+					
+				}
+				catch(Exception e) {
+					e.printStackTrace();
+				}
+				
 			RequestDispatcher requestDispatcher = request
                     .getRequestDispatcher("/Page43_Order_Successful.jsp");
             requestDispatcher.forward(request, response);

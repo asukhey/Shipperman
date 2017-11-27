@@ -6,12 +6,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>View Order</title>
+<title>View Employee</title>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
-
+    
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
@@ -20,39 +20,43 @@
 
     <div class="main">
         <h1>Shipperman Trucking Company</h1>    
-    
+    		<h1>Employees</h1> 
         <br>
 	<table width ="59%" border =1>
 	<tr>
-	<th>Order ID</th>
+		<th>Order ID</th>
 	<th>Order Date</th>
 	<th>Order Amount</th>
 	<th>Order Status</th>
 	<th>Driver</th>
 	<th>Truck For shipping</th>
+
 	
 	</tr>
 		<%
-		if(session.getAttribute("fname")==null){
-			response.sendRedirect("Page1_Login.jsp");
-		}
 			
 			try{
+				
+			int emp_id = Integer.parseInt(session.getAttribute("emp_id").toString());
 			/*Query for displaying the order*/
-			String view_orders=" SELECT order_id, order_date, order_amount, status, employees.emp_lname, employees.emp_fname"+
-								" ,trucks.truck_make, trucks.truck_model, trucks.truck_color " +
-								"FROM orders" +
-								" INNER JOIN employees on employees.emp_id = orders.emp_id " +
-								"INNER JOIN trucks on employees.emp_id = trucks.emp_id " +
-								"INNER JOIN customers on customers.cust_id = orders.cust_id " +
-								"where customers.cust_id = " + session.getAttribute("cust_id");
+			String ViewEmployee=" select * from orders where emp_id = " + emp_id + ";";
 		
 			/*Establish a connection*/
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/soag14","root","root");
-			PreparedStatement ps= conn.prepareStatement(view_orders);
-			ResultSet rs= ps.executeQuery();
+			
+			
+
+	            String sql =" SELECT order_id, order_date, order_amount, status, employees.emp_lname, employees.emp_fname"+
+						" ,trucks.truck_make, trucks.truck_model, trucks.truck_color " +
+						"FROM orders" +
+						" INNER JOIN employees on employees.emp_id = orders.emp_id " +
+						"INNER JOIN trucks on employees.emp_id = trucks.emp_id " +
+						"INNER JOIN customers on customers.cust_id = orders.cust_id ";
+	            
+	            PreparedStatement ps= conn.prepareStatement(sql);
+	            ResultSet rs = ps.executeQuery();
 			/*Loop to display data*/
 			while(rs.next()){ 
 				
@@ -69,14 +73,15 @@
 				
 			%>
 			
-			<tr>
+				<tr>
 			<td><%= order_id %>	</td>
 			<td><%= order_date %>	</td>
 			<td><%= amt %>	</td>
-			<td><%= status %>	</td>
+			<td><%= status %></td>
 			<td><%= ln%> <%= fn %></td>
 			<td><%= make%>	 <%= model%> <%= color %></td>	
 			</tr>
+
 		<%		
 			}
 				rs.close();
@@ -91,8 +96,18 @@
 
 
 	</table>
-    <a class = "button" href ="AdminP2_Profile.jsp">Go To Profile</a>
-    
+	<br><hr><br>
+	<form action="Modify.java" method="post">
+	  Order ID:	<input type="text" name="order_id"/>
+	  	<select name="status" class="form-control">
+	  	<option> Processing</option>
+	  	<option> Shipping</option>
+	  	<option> Shipped</option>
+	  	</select>
+	  	<input type="submit" value="submit"/> 
+	  	<br>
+	</form>
+    <a href="AdminP2_Profile.jsp"><input type="button" value="Back To Profiles Page" ></input></a>
     </div>
 </body>
 </html>

@@ -25,7 +25,7 @@
         <% HttpSession order_session = request.getSession();
 	String total = order_session.getAttribute("total").toString();%>
 
-        <form name = "Payment"  action="ValidateFormData" method = "POST">
+        <form name = "Payment"  action="ValidateFormData" method = "POST" >
 
             <label for ="ccn">Credit Card Number</label>
             <input type ="text" id = "ccn" name ="ccn" size ="16" class="form-control" required/><br>
@@ -44,9 +44,9 @@
                 <p><font color="red" > ${message2}</font> </p><br>
 		
                 <label for ="amount">Amount</label>
-                <input id = "amount" name = "amount" value="$<%= total  %>"  class="form-control"/><br>
+                <input id = "amount" name = "amount" value="$<%= total  %>"  class="form-control" readonly /><br>
 		
-                <label for ="month">Card Expiry Date (MM/YYYY)</label>
+                <label for ="month">Card Expiry Date (MM/YYYY)</label><br>
 		<input type="text" id = "month" name="month" size="2"> / <input type="text" name="year" size="4"><br>
                 <p><font color="red" >${message4} </font> </p><br>
 		
