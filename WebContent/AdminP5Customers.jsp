@@ -6,11 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Customer</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
 
-	<body>
+	
     
     <div class="navbar">
         <a href="index.html">Home</a>
@@ -19,8 +21,11 @@
     </div>
 
     <div class="main">
-        <h1>Shipperman Trucking Company</h1>    
-    		<h1>Customers</h1> 
+        <h1>Shipperman Trucking Company</h1><br>
+        <a style="float:right" href="index.html" >Logout</a><br>
+        
+        <div class="container">
+    	<h1>Customers</h1> 
         <br>
 	<table width ="100%" border =1>
 	<tr>
@@ -100,13 +105,16 @@
 	
 	<h4> Remove Employee: </h4>
 	
-	<form name = "RemCust" action="RemCust" method="post" >
-	  Customer ID:	<input type="text" name="c_id"/>
-	  <input type="submit" value="Delete Record" name = "submit"/> 
+	<form name = "Remove Customer" action="RemCust" method="post" >
+	  	
+          <label for="c_id">Customer ID</label>
+          <input type="text" id="c_id" name="c_id"/><br>
+          <input type="submit" value="Delete Record" name = "submit"/><br>
 	  	<br>
+           <a class ="button" href="AdminP2_Profile.jsp">Go To Profile</a>
 	</form>
-    <a href="AdminP2_Profile.jsp"><input type="button" value="Back To Profiles Page" ></input></a>
+    
     </div>
-</body>
+    </div>
 </body>
 </html>

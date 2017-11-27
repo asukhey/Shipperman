@@ -16,7 +16,8 @@
 	</div>
 
 	<div class="main">
-	<h1>Shipperman Trucking Company</h1>
+            <h1>Shipperman Trucking Company</h1><br>
+            <a style="float:right" href="index.html" >Logout</a><br>
 
 
 <%
@@ -31,10 +32,11 @@
 
             <div class="container">
             <form>
-                <p class="message"><strong>Welcome: <%= session.getAttribute("fname") %></strong></p> <br><br>
+                <p class="message" style="font-size:20px"><strong>Welcome Customer: <%= session.getAttribute("fname") %></strong></p> <br><br>
                 <!-- Operations -->
                 <a class = "button" href ="Page4_PlaceOrder.jsp">Place An Order</a>
                 <a class = "button" href ="Page5_ViewOrders.jsp">View Orders</a>
+                <a class = "button" href ="Page31_LocPricing.jsp">View Orders</a>
             </form>
             </div>
         </div>

@@ -20,7 +20,8 @@
 	</div>
 
 	<div class="main">
-	<h1>Shipperman Trucking Company</h1>
+            <h1>Shipperman Trucking Company</h1><br>
+            <a style="float:right" href="index.html" >Logout</a><br>
 	
 	<h2 align="center">Location Pricing</h2><br>
 	

@@ -5,8 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
     
@@ -17,8 +19,10 @@
     </div>
 
     <div class="main">
-        <h1>Shipperman Trucking Company</h1>    
-    		<h1>Employees</h1> 
+        <h1>Shipperman Trucking Company</h1><br>    
+    	<a style="float:right" href="index.html" >Logout</a><br>	
+        
+        <h1>Employees</h1> 
         <br>
 	<table width ="59%" border =1>
 	<tr>
@@ -95,15 +99,16 @@
 
 
 	</table>
-    <a href="AdminP2_Profile.jsp"><input type="button" value="Back To Profiles Page" ></input></a>
-    
-    
-    <hr>
-    
-    <a class = "button" href ="AdminP31_ProcessingOrders.jsp">Processing</a>
-    <a class = "button" href ="AdminP32_ShippingOrders.jsp">Out for shipping</a>
-  <a class = "button" href ="AdminP3ViewOrders.jsp">All Orders</a>
-    
-    </div>
+                <a class ="button" href="AdminP2_Profile.jsp">Go To Profile</a>
+
+
+                <hr>
+
+                <a class = "button" href ="AdminP31_ProcessingOrders.jsp">Processing</a>
+                <a class = "button" href ="AdminP32_ShippingOrders.jsp">Out for shipping</a>
+                <a class = "button" href ="AdminP3ViewOrders.jsp">All Orders</a>
+
+         
+        </div>
 </body>
 </html>

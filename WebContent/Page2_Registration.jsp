@@ -19,24 +19,44 @@
 	<div class="main">
 	<h1>Shipperman Trucking Company</h1>
         
+       <script>
+		
+		function Verify() {
+			  var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			  var emailObj = document.getElementById("cus_email");
+			  if (emailObj.value === null || emailObj.value === "") {
+			   alert("Enter email Id");
+			   emailObj.focus();
+			   return false;
+			  } else if (!emailpattern.test(emailObj.value)) {
+			   alert("please enter valid e-mail address")
+			   emailObj.focus();
+			   return false;
+			  } else {
+			   return true;
+			  }
+		}
+		
+		</script>
+        
         <div class="container">
         <form name = "Register" action="Register" method="post" >
 	
                 <h3>Personal</h3><br>
-		First Name <input type="text" name ="fn" class = "form-control" required/><br>
-		Last Name <input type="text" name ="ln" class = "form-control" required/><br>
+		First Name <input type="text" name ="fn" pattern= "{A-Za-z]" class = "form-control" required/><br>
+		Last Name <input type="text" name ="ln" pattern= "{A-Za-z]" class = "form-control" required/><br>
 		
 		<h3>Billing Address</h3><br> 
 		Street Address <input type="text" name ="stadd" class = "form-control" required/><br>
 		City <input type="text" name ="city" class = "form-control" required/><br>
 		State <input type="text" name ="state" class = "form-control" required/><br>
-		Zip <input type="text" name ="zip" class = "form-control" required/><br>
+		Zip <input type="text" name ="zip" size="5" pattern ="[0-9]" class = "form-control" required/><br>
 		Country <input type="text" name ="country" class = "form-control" required/><br>
 		
 		<h3>Contact Info</h3><br> 
-		Residence <input type="text" name="res" class = "form-control" /><br>
-		Cell <input type="text" name="cell" class = "form-control" required/><br>
-		Fax <input type="text" name="fax" class = "form-control" ><br>
+		Residence <input type="text" name="res" size="10" pattern ="[0-9]" class = "form-control" /><br>
+		Cell <input type="text" name="cell" size="10" pattern ="[0-9]" class = "form-control" required/><br>
+		Fax <input type="text" name="fax" size="10" pattern ="[0-9]" class = "form-control" ><br>
 		
 		<h3>Profile Authentication</h3><br> 
 		Email <input type="text" name="email" class = "form-control" required/><br>
@@ -44,7 +64,7 @@
 		
 		<h3>Company</h3><br> 
 		Company name <input type="text" name="company" class = "form-control" required/><br>
-		Type <input type="radio" name="type" value="employee">Employee<br>
+                Type<br> <input type="radio" name="type" value="employee">Employee<br>
                      <input type="radio" name="type" value="owner">Owner<br>
 		
 		<h3>Alternate Contact</h3><br> 
@@ -52,7 +72,7 @@
 		Phone Number <input type="text" name="acph" class = "form-control" required/><br>
 		<br>
 		
-		<input type="Submit" name="Submit" id="Submit" value = "Register">
+		<input type="Submit" name="Submit" id="Submit" value = "Register" onclick="Vefiry()" />
 	</form>
         </div>
         </div>

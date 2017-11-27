@@ -19,7 +19,8 @@
 	</div>
 
 	<div class="main">
-	<h1>Shipperman Trucking Company</h1>
+            <h1>Shipperman Trucking Company</h1><br>
+        <a style="float:right" href="index.html" >Logout</a><br>
     
         <table width=59% border ="1">
 		<tr>
@@ -81,7 +82,6 @@
 	order_session.setAttribute("rent_rate",rental);
 	order_session.setAttribute("tax",Tax);
 	order_session.setAttribute("total",total);
-	order_session.setAttribute("ship_type",type);
 	}
 	}catch(Exception e){
 			e.printStackTrace();

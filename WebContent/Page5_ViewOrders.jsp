@@ -19,7 +19,8 @@
     </div>
 
     <div class="main">
-        <h1>Shipperman Trucking Company</h1>    
+        <h1>Shipperman Trucking Company</h1><br>
+        <a style="float:right" href="index.html" >Logout</a><br>
     
         <br>
 	<table width ="59%" border =1>
@@ -91,8 +92,7 @@
 
 
 	</table>
-    <a class = "button" href ="AdminP2_Profile.jsp">Go To Profile</a>
-    
+    <a class = "button" href ="Page3_Profile.jsp">Go To Profile</a>
     </div>
 </body>
 </html>

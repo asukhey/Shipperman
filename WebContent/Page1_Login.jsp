@@ -20,12 +20,12 @@
 	<div class="main">
 	<h1>Shipperman Trucking Company</h1>
         
-		<script>
+        		<script>
 		
 		function Verify() {
 			  var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 			  var emailObj = document.getElementById("cus_email");
-			  if (emailObj.value == null || emailObj.value == "") {
+			  if (emailObj.value === null || emailObj.value === "") {
 			   alert("Enter email Id");
 			   emailObj.focus();
 			   return false;
@@ -39,7 +39,8 @@
 		}
 		
 		</script>
-		
+              
+        
         <div class="container">
             
         	<form name = "Login" action="Login" method="post">
@@ -50,7 +51,7 @@
                 <label for ="password">Password</label> 
                 <input type ="password" id = "password" name ="password" class = "form-control" required/><br>
 				
-                <input type="Submit" name="Submit" id="Submit" value ="Login" onclick="Verify()" /><br>
+                <input type="Submit" name="Submit" id="Submit" value ="Login" onclick="Verify()"/><br>
 		
                 <p class="message"><strong>OR</strong></p>
                 <a class = "button" href="Page2_Registration.jsp">Register</a>

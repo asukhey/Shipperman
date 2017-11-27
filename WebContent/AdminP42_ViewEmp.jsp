@@ -6,7 +6,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>View Employee</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
     
@@ -17,7 +19,10 @@
     </div>
 
     <div class="main">
-        <h1>Shipperman Trucking Company</h1>    
+        <h1>Shipperman Trucking Company</h1><br>
+        <a style="float:right" href="index.html" >Logout</a><br>
+        
+        <div class="container">
     		<h1>Employees</h1> 
         <br>
 	<table width ="100%" border =1>
@@ -97,11 +102,14 @@
 	<h4> Remove Employee: </h4>
 	
 	<form name = "RemEmp" action="RemEmp" method="post" >
-	  Employee ID:	<input type="text" name="e_id"/>
-	  <input type="submit" value="submit" name = "submit"/> 
-	  	<br>
-	</form>
-    <a href="AdminP2_Profile.jsp"><input type="button" value="Back To Profiles Page" ></input></a>
-    </div>
+            <label for="e_id">Employee ID</label>	
+            <input type="text" id ="e_id" name="e_id"/><br>
+            <input type="submit" value="Submit" name = "submit"/><br> 
+	    <br>
+	
+            <a class ="button" href="AdminP2_Profile.jsp">Go To Profile></input></a>
+        </form>
+        </div>
+        </div>
 </body>
 </html>

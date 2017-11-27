@@ -17,7 +17,8 @@
     </div>
 
     <div class="main">
-        <h1>Shipperman Trucking Company</h1>
+        <h1>Shipperman Trucking Company</h1><br>
+        <a style="float:right" href="index.html" >Logout</a><br>
 
         <div class="container">
 	<form name = "Place Order" action="Page41_Confirm_Order.jsp" method="post">

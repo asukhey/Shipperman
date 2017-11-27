@@ -1,15 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Profile</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="StylesheetIntro.css">
 </head>
 <body>
-	
-	
-<h1>Shipperman Trucking Company:Admin View</h1>
+	<div class="navbar">
+	  <a href="index.html">Home</a>
+	  <a href="about.html">About Us</a>
+	  <a href="contact.html">Contact Us</a>
+	</div>
+
+	<div class="main">
+            <h1>Shipperman Trucking Company</h1><br>
+        <a style="float:right" href="index.html" >Logout</a><br>
 
 
 <%
@@ -21,13 +29,14 @@
 	/*Retrieve ID*/
 	session.getAttribute("emp_id");
 %>
-	<h5 align="right" >Welcome: <%= session.getAttribute("emp_fname") %></h5> <br><br>
-	
-	
-	<a href="AdminP3ViewOrders.jsp"><input type="button" value="Orders" ></input></a> <br>
-	<a href="AdminP4Employees.jsp"><input type="button" value="Employees" ></input></a> <br>
-	<a href="AdminP5Customers.jsp"><input type="button" value="Customers" ></input></a>
-	
-	
+            <div class="container">
+                <form>
+                    <p class="message" style="font-size:20px"><strong>Welcome Admin: <%= session.getAttribute("emp_fname") %></strong></p> <br><br>
+                    <a class ="button" href="AdminP3ViewOrders.jsp">View Orders</a> <br>
+                    <a class ="button" href="AdminP4Employees.jsp">View Employees></a> <br>
+                    <a class = "button" href="AdminP5Customers.jsp">View Customers</a>
+                </form>
+            </div>
+        </div>
 </body>
 </html>

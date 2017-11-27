@@ -23,10 +23,13 @@
     </div>
 
     <div class="main">
-        <h1>Shipperman Trucking Company</h1>    
-    		<h1>Employees</h1> 
+        <h1>Shipperman Trucking Company</h1><br>  
+        <a style="float:right" href="index.html" >Logout</a><br>
+        
+        <div class="container">
+        <h1>Employees</h1> 
         <br>
-	<table width ="59%" border =1>
+	<table width ="100%" border =1>
 	<tr>
 		<th>Order ID</th>
 	<th>Order Date</th>
@@ -100,24 +103,9 @@
 
 
 	</table>
-<<<<<<< HEAD
+
 	<br><hr><br>
-	<form action="Modify.java" method="post">
-	  Order ID:	<input type="text" name="order_id"/>
-	  	<select name="status" class="form-control">
-	  	<option> Processing</option>
-	  	<option> Shipping</option>
-	  	<option> Shipped</option>
-	  	</select>
-	  	<input type="submit" value="submit"/> 
-	  	<br>
-	</form>
-    <a href="AdminP2_Profile.jsp"><input type="button" value="Back To Profiles Page" ></input></a>
-    </div>
-=======
-	
-	<div class="container">
-	<form action="Modify.java" method="post">
+	 <form action="Modify.java" method="post">
 	  	<label for ="orderId">Order ID</label>
 		<input type="text" name="order_id" class = "form-control" /><br>
 		
@@ -126,13 +114,13 @@
 	  	<option> Shipping</option>
 	  	<option> Shipped</option>
 	  	</select><br>
-	  	<input type="Submit" name="Submit" id="Submit" />
+	  	<input type="Submit" name="Submit" id="Submit" value="Modify Order Status"/>
 	  	<br>
 	
 		<a class = "button" href="AdminP2_Profile.jsp">Go To Profile</a>
 	</form>
-	</div>
-</div>
+    </div>
+    </div>
 >>>>>>> 271a2c9a2c3a8eb655a7878e54b775854bfa5eda
 </body>
 </html>

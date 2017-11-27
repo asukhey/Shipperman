@@ -30,10 +30,11 @@
     </div>
 
     <div class="main">
-        <h1>Shipperman Trucking Company</h1>
+        <h1>Shipperman Trucking Company</h1><br>
+        <a style="float:right" href="index.html" >Logout</a><br>
 
         <div class="container">
-        <p class = "message" >Order Placed Successfully</p>
+        <p class = "message" style="font-size:20px">Order Placed Successfully</p>
 
         <table border ="1" width=100% >
 	<tr>
