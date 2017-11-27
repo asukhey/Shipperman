@@ -29,10 +29,14 @@
 	session.getAttribute("cust_id");
 %>
 
-<h5 align="right" >Welcome: <%= session.getAttribute("fname") %></h5> <br><br>
-<!-- Operations -->
-<a class = "button" href ="Page4_PlaceOrder.jsp">Place An Order</a>
-<a class = "button" href ="Page5_ViewOrders.jsp">View Orders</a>
-</div>
+            <div class="container">
+            <form>
+                <p class="message"><strong>Welcome: <%= session.getAttribute("fname") %></strong></p> <br><br>
+                <!-- Operations -->
+                <a class = "button" href ="Page4_PlaceOrder.jsp">Place An Order</a>
+                <a class = "button" href ="Page5_ViewOrders.jsp">View Orders</a>
+            </form>
+            </div>
+        </div>
 </body>
 </html>
