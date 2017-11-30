@@ -24,8 +24,8 @@
 		
 		function Verify() {
 			  var emailpattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-			  var emailObj = document.getElementById("email");
-			  if (emailObj.value === null || emailObj.value === "") {
+			  var emailObj = document.getElementById("cus_email");
+			  if (emailObj.value == null || emailObj.value == "") {
 			   alert("Enter email Id");
 			   emailObj.focus();
 			   return false;

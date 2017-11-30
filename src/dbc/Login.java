@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -72,8 +73,7 @@ public class Login extends HttpServlet {
 			/*If creds are correct- accept id and first name as sessions*/
 			
 			if(em.equals(dbEmail)&&pw.equals(dbPassword)) {
-				/*RequestDispatcher rd=request.getRequestDispatcher("Page3_Profile.jsp");
-				rd.include(request, response);*/
+				out.print("Welcome: "+em);
 				HttpSession session = request.getSession();
 				session.setAttribute("fname", name);
 				session.setAttribute("cust_id", id);
