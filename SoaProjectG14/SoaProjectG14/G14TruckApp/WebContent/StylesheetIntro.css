@@ -1,0 +1,103 @@
+body {
+    background-image: url("paper2.jpg");
+	background-repeat: repeat-y;
+	background-size: 100%;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.container{
+	width: 25%;
+	padding-top: 7%;
+}
+p.message{
+            color: purple;
+            font-family: "Times New Roman", Times, serif;
+        }
+p.test {
+	text-align: left;
+	width: 50em;
+    word-wrap: break-word;
+}
+.button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+}
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; 
+}
+
+h1 {
+	font-family: "Times New Roman", Times, serif;
+}
+input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+input[type=submit]:hover {
+            background-color: #45a049;
+        }
+.form-control{
+        color:black;    
+        }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+    border-right:1px solid #bbb;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
