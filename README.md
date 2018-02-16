@@ -10,6 +10,8 @@ The group members are:
 
 3. Meghna Bhagwat - A20393668
 
+## NOTE: Within the repo, A doc file name "Group-14_Project_Report.docx" explains the application in detail alongwith the snapshots. 
+
 ## About:
   
 Shipperman is a web application that deals with shipping of goods from one location to another for personal and business purposes. The name was inspired from the album **Shipperman** by Indian vocalist Sunneith Revankar. Following briefly explains the working of the application. 
@@ -25,4 +27,4 @@ The user has 2 options depending on the existance of account in his/her name - L
   
   Here, the user can manage customers registered, employees hired, change the status of the order for the customers which makes tracking efficient. Managing users include, registering an employee, deleting a customer, order and employee.
   
-Within the repo, A doc file name "Group-14_Project_Report.docx" explains the application in detail alongwith the snapshots. 
+
